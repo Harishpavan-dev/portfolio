@@ -18,8 +18,8 @@ const Home = () => {
                 strings: [
                   "Developer ",
                   /*"Tutor.",
-                  "Content Creator.",
-                  "Designer.",*/
+                  "Content Creator.",*/
+                  "Designer.",
                 ],
                 autoStart: true,
                 loop: true,
