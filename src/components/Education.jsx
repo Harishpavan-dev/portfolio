@@ -28,7 +28,7 @@ const Education = () => {
             <p className="text-lg text-gray-700 text-center">
               NVQ-04
               <br /> College of Technology, Jaffna  
-              <br /> Attended 7 months of 1-year program
+              <br /> Attended 7 months of 1-year program(2025)
             </p>
           </div>
           <div className="w-full bg-[#F2EFE5] p-6 rounded-2xl shadow-lg">
