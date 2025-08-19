@@ -9,7 +9,7 @@ const Footer = () => {
         </p>
         <p className="text-sm md:text-base font-medium">
           Made with ❤️ by{" "}
-          <a href="#" className="underline hover:text-[#ffffff]">
+          <a href="https://wa.me/94764328867?text=Hi%20Harish!" className="underline hover:text-[#ffffff]">
             Harishpavan
           </a>
         </p>
