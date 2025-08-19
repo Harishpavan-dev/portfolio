@@ -15,7 +15,7 @@ const Education = () => {
             <h2 className="text-center text-[#fe5617] font-extrabold text-[28px] mb-2">
             In Progress
             </h2>
-            <p className="text-lg text-gray-700 text-center">
+            <p className="text-lg text-gray-700 text-center">I move in silence and I let my results speak louder than words.
             
               <br /> 
               <br /> 
