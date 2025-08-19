@@ -39,7 +39,7 @@ const About = () => {
         {/* About Me Section */}
         <p className="text-lg md:text-xl text-gray-700 text-center leading-relaxed">
           I’m <span className="font-bold text-[#fe5617]">Bavananthan Harishpavan</span>,
-          I’m Bavananthan Harishpavan, an enthusiastic student passionate about technology and cybersecurity. I’m continuously learning and improving my skills in web development, IT, and cybersecurity. While I don’t have professional experience yet, I’m eager to work on creative projects, grow as a developer and cybersecurity professional, and share knowledge with others.
+           an enthusiastic student passionate about technology and cybersecurity. I’m continuously learning and improving my skills in <span className="font-bold text-[#fe5617]">web development, IT, and cybersecurity</span>. While I don’t have professional experience yet, I’m eager to work on creative projects, grow as a <span className="font-bold text-[#fe5617]">developer and cybersecurity professional</span>, and share knowledge with others.
           
         </p>
 

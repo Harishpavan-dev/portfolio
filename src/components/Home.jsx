@@ -30,7 +30,7 @@ const Home = () => {
           </h2>
           {/* About Me */}
           <p className="text-lg md:text-xl text-gray-700 font-medium">
-                 I am an enthusiastic student passionate about technology and cybersecurity. While I don’t have professional experience yet, but I keep practicing and improving my skills in web development, IT, and cybersecurity. My goal is to grow as a developer and cybersecurity professional.
+                 I am an enthusiastic student passionate about technology and cybersecurity. While I don’t have professional experience yet, but I keep practicing and improving my skills in <span className="font-bold text-[#fe5617]">web development, IT, and cybersecurity</span>. My goal is to grow as a developer and cybersecurity professional.
           </p>
 
           {/* Contact Information */}
