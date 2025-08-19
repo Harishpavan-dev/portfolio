@@ -11,17 +11,12 @@ import {
 } from "react-icons/fa";
 import {
   SiTailwindcss,
-  SiBootstrap,
-  SiExpress,
   SiNextdotjs,
   SiNetlify,
   SiMongodb,
-  SiSocketdotio,
   SiPostman,
-  SiGraphql,
-  SiRedux,
-  SiJsonwebtokens,
   SiRender,
+  SiMysql,
 } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { DiVisualstudio } from "react-icons/di";
@@ -80,6 +75,10 @@ const About = () => {
               <FaNode size={40} className="text-[#68a063]" />
               <span className="font-bold">Node.js</span>
             </div>
+            <div className="flex flex-col items-center space-y-2">
+  <SiMysql size={40} className="text-[#4479A1]" />
+  <span className="font-bold">MySQL</span>
+</div>
           
             <div className="flex flex-col items-center space-y-2">
               <SiMongodb size={40} className="text-[#47a248]" />
