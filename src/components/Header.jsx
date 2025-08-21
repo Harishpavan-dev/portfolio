@@ -69,6 +69,11 @@ const Header = () => {
                 Education
               </li>
             </Link>
+            <Link to="projects" smooth={true} duration={500}>
+    <li className="hover:text-[#fe5617] cursor-pointer transition-transform duration-300 ease-in transform hover:translate-y-[-7px]">
+      Projects
+    </li>
+  </Link>
             <Link to="contact" smooth={true} duration={500}>
               <li className="hover:text-[#fe5617] cursor-pointer transition-transform duration-300 ease-in transform hover:translate-y-[-7px]">
                 Contact
