@@ -49,7 +49,7 @@ const Home = () => {
           </div>
           {/* Button */}
           <div className="bg-[#fe5617] px-5 py-2 rounded-2xl font-bold ">
-            <a href="https://wa.me/94764328867?text=Hi%20Harish!">Download CV</a>
+            <a href="https://drive.google.com/file/d/1iEqBnTpom4nB9xplMhfHIRbmf6l8npzA/view?usp=drive_link">Download CV</a>
           </div>
         </div>
 
