@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { Link } from "react-scroll";
-import { BsSun, BsMoon } from "react-icons/bs"; // 🌗 Theme toggle icons
+import { BsSun, BsMoon } from "react-icons/bs"; // Theme toggle icons
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,13 +32,12 @@ const Header = () => {
           </h1>
         </div>
 
-        {/* Theme Toggle Button */}
+        {/* Theme Toggle & Hamburger Menu for Mobile */}
         <div className="lg:hidden flex items-center gap-3">
           <button onClick={toggleTheme} className="text-[#fe5617]">
             {theme === "light" ? <BsMoon size={22} /> : <BsSun size={22} />}
           </button>
 
-          {/* Hamburger Menu */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="transition-all duration-500 ease-in text-[#fe5617]"
@@ -70,10 +69,10 @@ const Header = () => {
               </li>
             </Link>
             <Link to="projects" smooth={true} duration={500}>
-    <li className="hover:text-[#fe5617] cursor-pointer transition-transform duration-300 ease-in transform hover:translate-y-[-7px]">
-      Projects
-    </li>
-  </Link>
+              <li className="hover:text-[#fe5617] cursor-pointer transition-transform duration-300 ease-in transform hover:translate-y-[-7px]">
+                Projects
+              </li>
+            </Link>
             <Link to="contact" smooth={true} duration={500}>
               <li className="hover:text-[#fe5617] cursor-pointer transition-transform duration-300 ease-in transform hover:translate-y-[-7px]">
                 Contact
@@ -84,43 +83,37 @@ const Header = () => {
           {/* Social Links for Mobile */}
           <div
             className={`${
-              isMenuOpen ? "block" : "hidden"
-            } lg:hidden mt-3 flex justify-center gap-5`}
+              isMenuOpen ? "flex" : "hidden"
+            } mt-3 justify-center gap-5`}
           >
-            <a
-              href="https://github.com/Harishpavan-dev"
-              className="hover:text-[#fe5617]"
-            >
+            <a href="https://github.com/Harishpavan-dev" className="hover:text-[#fe5617]">
               <FaGithub size={29} />
             </a>
             <a href="#" className="hover:text-[#fe5617]">
               <FaLinkedin size={29} />
             </a>
-            <a
-              href="https://www.instagram.com/harishpavan_dev/?__pwa=1"
-              className="hover:text-[#fe5617]"
-            >
+            <a href="https://www.instagram.com/harishpavan_dev/?__pwa=1" className="hover:text-[#fe5617]">
               <FaInstagram size={29} />
+            </a>
+            <a href="https://wa.me/94764328867?text=Hi%20Harish!" className="hover:text-[#fe5617]">
+              <FaWhatsapp size={29} />
             </a>
           </div>
         </nav>
 
         {/* Social Media + Theme Toggle for Desktop */}
         <div className="hidden lg:flex items-center gap-5">
-          <a
-            href="https://github.com/Harishpavan-dev"
-            className="hover:text-[#fe5617]"
-          >
+          <a href="https://github.com/Harishpavan-dev" className="hover:text-[#fe5617]">
             <FaGithub size={29} />
           </a>
           <a href="#" className="hover:text-[#fe5617]">
             <FaLinkedin size={29} />
           </a>
-          <a
-            href="https://www.instagram.com/harishpavan_dev/?__pwa=1"
-            className="hover:text-[#fe5617]"
-          >
+          <a href="https://www.instagram.com/harishpavan_dev/?__pwa=1" className="hover:text-[#fe5617]">
             <FaInstagram size={29} />
+          </a>
+          <a href="https://wa.me/94764328867?text=Hi%20Harish!" className="hover:text-[#fe5617]">
+            <FaWhatsapp size={29} />
           </a>
           <button onClick={toggleTheme} className="text-[#fe5617]">
             {theme === "light" ? <BsMoon size={22} /> : <BsSun size={22} />}
