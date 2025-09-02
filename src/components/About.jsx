@@ -28,19 +28,19 @@ const skills = {
     { name: "JavaScript", icon: <FaJsSquare size={40} className="text-[#f7df1e]" />, level: 40 },
     { name: "Tailwind CSS", icon: <SiTailwindcss size={40} className="text-[#38bdf8]" />, level: 70 },
     { name: "React.js", icon: <FaReact size={40} className="text-[#61dbfb]" />, level: 60 },
-    { name: "Next.js", icon: <SiNextdotjs size={40} />, level: 10 },
+    
   ],
   backend: [
-    { name: "Node.js", icon: <FaNode size={40} className="text-[#68a063]" />, level: 20 },
+   
     { name: "MySQL", icon: <SiMysql size={40} className="text-[#4479A1]" />, level: 65 },
     { name: "MongoDB", icon: <SiMongodb size={40} className="text-[#47a248]" />, level: 45 },
   ],
   tools: [
-    { name: "Git", icon: <FaGitAlt size={40} className="text-[#f05032]" />, level: 75 },
+    
     { name: "GitHub", icon: <FaGithub size={40} />, level: 70 },
     { name: "VS Code", icon: <DiVisualstudio size={40} className="text-[#0078d7]" />, level: 85 },
     { name: "Postman", icon: <SiPostman size={40} className="text-[#ef5b25]" />, level: 60 },
-    { name: "NPM", icon: <IoLogoNpm size={40} className="text-[#CB3837]" />, level: 20 },
+    
   ],
   deployment: [
     { name: "Vercel", icon: <IoLogoVercel size={40} />, level: 70 },
