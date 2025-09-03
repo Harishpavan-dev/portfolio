@@ -7,6 +7,7 @@ import {
   FaGithub,
   FaGitAlt,
   FaFigma,
+  FaWordpress,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -28,19 +29,18 @@ const skills = {
     { name: "JavaScript", icon: <FaJsSquare size={40} className="text-[#f7df1e]" />, level: 40 },
     { name: "Tailwind CSS", icon: <SiTailwindcss size={40} className="text-[#38bdf8]" />, level: 70 },
     { name: "React.js", icon: <FaReact size={40} className="text-[#61dbfb]" />, level: 60 },
-    
   ],
   backend: [
-   
     { name: "MySQL", icon: <SiMysql size={40} className="text-[#4479A1]" />, level: 65 },
     { name: "MongoDB", icon: <SiMongodb size={40} className="text-[#47a248]" />, level: 45 },
   ],
+  cms: [
+    { name: "WordPress", icon: <FaWordpress size={40} className="text-[#21759b]" />, level: 40 },
+  ],
   tools: [
-    
     { name: "GitHub", icon: <FaGithub size={40} />, level: 70 },
     { name: "VS Code", icon: <DiVisualstudio size={40} className="text-[#0078d7]" />, level: 85 },
     { name: "Postman", icon: <SiPostman size={40} className="text-[#ef5b25]" />, level: 60 },
-    
   ],
   deployment: [
     { name: "Vercel", icon: <IoLogoVercel size={40} />, level: 70 },
@@ -97,13 +97,13 @@ const About = () => {
 
         {/* About Me Text */}
         <p className="text-lg md:text-xl text-gray-700 text-center leading-relaxed">
-          I’m <span className="font-bold text-[#fe5617]">Bavananthan Harishpavan</span>, an
-          enthusiastic student passionate about technology and cybersecurity. I’m
+          I'm <span className="font-bold text-[#fe5617]">Bavananthan Harishpavan</span>, an
+          enthusiastic student passionate about technology and cybersecurity. I'm
           continuously learning and improving my skills in{" "}
           <span className="font-bold text-[#fe5617]">
             web development, IT, and cybersecurity
           </span>
-          . While I don’t have professional experience yet, I’m eager to work on creative
+          . While I don't have professional experience yet, I'm eager to work on creative
           projects, grow as a{" "}
           <span className="font-bold text-[#fe5617]">
             developer and cybersecurity professional
@@ -116,6 +116,7 @@ const About = () => {
           <h2 className="text-2xl font-bold text-center text-[#fe5617]">My Skills</h2>
           <SkillSection title="Frontend" skillList={skills.frontend} />
           <SkillSection title="Backend" skillList={skills.backend} />
+          <SkillSection title="CMS & Platforms" skillList={skills.cms} />
           <SkillSection title="Tools & Utilities" skillList={skills.tools} />
           <SkillSection title="Deployment" skillList={skills.deployment} />
           <SkillSection title="Design" skillList={skills.design} />

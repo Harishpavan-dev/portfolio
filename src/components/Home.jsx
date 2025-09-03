@@ -1,6 +1,7 @@
 import Typewriter from "typewriter-effect";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { Link } from "react-scroll";
 
 const Home = () => {
   return (
@@ -17,7 +18,7 @@ const Home = () => {
               options={{
                 strings: [
                   "Developer ",
-                  "Cybersecurity Enthusiast,  ",
+                  "Cybersecurity Enthusiast,",
                   "Designer.",
                 ],
                 autoStart: true,
@@ -48,9 +49,17 @@ const Home = () => {
             </div>
           </div>
           {/* Button */}
-          <div className="bg-[#fe5617] px-5 py-2 rounded-2xl font-bold ">
-            <a href="https://drive.google.com/file/d/1iEqBnTpom4nB9xplMhfHIRbmf6l8npzA/view?usp=drive_link">Download CV</a>
-          </div>
+          <div className="flex gap-4">
+  <div className="bg-[#fe5617] px-5 py-2 rounded-2xl font-bold">
+    <a href="https://drive.google.com/file/d/1iEqBnTpom4nB9xplMhfHIRbmf6l8npzA/view?usp=drive_link">Download CV</a>
+  </div>
+  <Link to="contact" smooth={true} duration={500}>
+  <div className="bg-[#1f2937] px-5 py-2 rounded-2xl font-bold text-white text-center cursor-pointer">
+    Hire Me
+  </div>
+</Link>
+</div>
+
         </div>
 
         {/* Right Section */}
