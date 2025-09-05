@@ -1,38 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-    </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6318019576548101"
-     crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-6318019576548101">
+    <!-- Meta Tags for SEO -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Bavananthan Harishpavan - Enthusiastic student passionate about technology, IT, web development, and cybersecurity. Explore my projects, skills, and services." />
+    <meta name="keywords" content="Harishpavan, Bavananthan Harishpavan, technology, IT, web development, cybersecurity, software development, portfolio, projects, skills" />
+    <meta name="author" content="Bavananthan Harishpavan" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://harishpavan-dev.vercel.app/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
-    <title>Bavananthan Harishpavan</title>
+
+    <!-- AMP & Ads -->
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6318019576548101" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6318019576548101">
+
+    <!-- Open Graph (Social Sharing) -->
+    <meta property="og:title" content="Bavananthan Harishpavan - Technology, IT & Cybersecurity Portfolio" />
+    <meta property="og:description" content="Check out my portfolio, projects, skills, and services in web development, IT, and cybersecurity." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://harishpavan-dev.vercel.app/" />
+    <meta property="og:image" content="https://harishpavan-dev.vercel.app/portfolio-thumbnail.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bavananthan Harishpavan - Portfolio" />
+    <meta name="twitter:description" content="Explore my projects, services, and skills in technology, IT, and cybersecurity." />
+    <meta name="twitter:image" content="https://harishpavan-dev.vercel.app/portfolio-thumbnail.png" />
+
+    <!-- Structured Data JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Bavananthan Harishpavan",
+      "url": "https://harishpavan-dev.vercel.app/",
+      "sameAs": [
+        "https://github.com/Harishpavan-dev",
+        "https://www.instagram.com/harishpavan_dev/?__pwa=1",
+        "#"
+      ],
+      "jobTitle": "Student, Developer, Cybersecurity Enthusiast",
+      "description": "Enthusiastic student passionate about technology, IT, web development, and cybersecurity. Exploring projects and services to grow as a professional developer and cybersecurity specialist."
+    }
+    </script>
+
+    <!-- Page Title -->
+    <title>Bavananthan Harishpavan | Technology, IT & Cybersecurity Portfolio</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KBDWWTK3C8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KBDWWTK3C8');
+    </script>
   </head>
   <body>
-    <amp-auto-ads type="adsense"
-        data-ad-client="ca-pub-6318019576548101">
-</amp-auto-ads>
+    <!-- AMP Auto Ads -->
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-6318019576548101"></amp-auto-ads>
+
+    <!-- React Root -->
     <div id="root"></div>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KBDWWTK3C8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-KBDWWTK3C8');
-</script>
-
+    <!-- Main JS -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
