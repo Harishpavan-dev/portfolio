@@ -56,7 +56,7 @@ const Home = () => {
   <div className="bg-[#fe5617] px-5 py-2 rounded-2xl font-bold">
     <a href="https://drive.google.com/file/d/1iEqBnTpom4nB9xplMhfHIRbmf6l8npzA/view?usp=drive_link">Download CV</a>
   </div>
-  <Link to="contact" smooth={true} duration={500}>
+  <Link to="services" smooth={true} duration={500}>
   <div className="bg-[#1f2937] px-5 py-2 rounded-2xl font-bold text-white text-center cursor-pointer">
     Hire Me
   </div>
