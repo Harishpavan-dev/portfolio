@@ -74,6 +74,34 @@ const Projects = () => {
     </a>
   </div>
 </div>
+{/* Project 2 */}
+<div className="w-full bg-[#F2EFE5] dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+  <h2 className="text-center text-[#fe5617] font-extrabold text-[28px] mb-2">
+    World Clock Project
+  </h2>
+  <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
+    A live world clock with autocomplete search for cities. Built with HTML, CSS, and JavaScript.
+  </p>
+  <div className="flex justify-center gap-4 mt-4">
+    <a
+      href="https://world-clock-harishpavan-dev.vercel.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-[#fe5617] text-white px-5 py-2 rounded-xl font-semibold shadow-md hover:bg-[#e14c12] transition"
+    >
+      View Live
+    </a>
+    <a
+      href="https://github.com/Harishpavan-dev/World-Clock-project.git"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-5 py-2 rounded-xl font-semibold shadow-md hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+    >
+      View Code
+    </a>
+  </div>
+</div>
+
 
 </div>
         </div>
