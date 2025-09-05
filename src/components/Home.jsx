@@ -98,7 +98,7 @@ const Home = () => {
         >
           <img
             className="w-[80%] rounded-[50px]"
-            src="/public/Bavananthan Harishpavan - Developer & Cybersecurity Enthusiast.jpg"
+            src="/public/Harishpavan-profile.jpg"
             alt="Bavananthan Harishpavan - Developer & Cybersecurity Enthusiast"
             loading="lazy"
           />
