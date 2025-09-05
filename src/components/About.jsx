@@ -3,11 +3,13 @@ import {
   FaCss3Alt,
   FaJsSquare,
   FaReact,
-  FaNode,
+  FaPhp,
   FaGithub,
   FaGitAlt,
   FaFigma,
   FaWordpress,
+  FaJava,
+  FaPython,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -19,10 +21,13 @@ import {
   SiMysql,
 } from "react-icons/si";
 import { DiVisualstudio } from "react-icons/di";
-import { IoLogoNpm, IoLogoVercel } from "react-icons/io5";
+import { IoLogoVercel } from "react-icons/io5";
 
 // 🟠 Skills Data
 const skills = {
+  
+
+  
   frontend: [
     { name: "HTML5", icon: <FaHtml5 size={40} className="text-[#e34c26]" />, level: 90 },
     { name: "CSS3", icon: <FaCss3Alt size={40} className="text-[#264de4]" />, level: 85 },
@@ -31,6 +36,9 @@ const skills = {
     { name: "React.js", icon: <FaReact size={40} className="text-[#61dbfb]" />, level: 60 },
   ],
   backend: [
+    { name: "PHP", icon: <FaPhp size={40} className="text-[#777bb4]" />, level: 30 },
+    { name: "Java", icon: <FaJava size={40} className="text-[#f89820]" />, level: 20 },
+    { name: "Python", icon: <FaPython size={40} className="text-[#3776AB]" />, level: 20 },
     { name: "MySQL", icon: <SiMysql size={40} className="text-[#4479A1]" />, level: 65 },
     { name: "MongoDB", icon: <SiMongodb size={40} className="text-[#47a248]" />, level: 45 },
   ],
@@ -41,6 +49,7 @@ const skills = {
     { name: "GitHub", icon: <FaGithub size={40} />, level: 70 },
     { name: "VS Code", icon: <DiVisualstudio size={40} className="text-[#0078d7]" />, level: 85 },
     { name: "Postman", icon: <SiPostman size={40} className="text-[#ef5b25]" />, level: 60 },
+    
   ],
   deployment: [
     { name: "Vercel", icon: <IoLogoVercel size={40} />, level: 70 },
@@ -51,9 +60,24 @@ const skills = {
     { name: "Figma", icon: <FaFigma size={40} className="text-[#F24E1E]" />, level: 40 },
   ],
   cybersecurity: [
-    { name: "Ethical Hacking", icon: <span>🛡️</span>, level: 30 },
-    { name: "Networking Basics", icon: <span>🌐</span>, level: 20 },
+    { name: "Kali Linux", icon: <span>🐱‍💻</span>, level: 90 },
+    { name: "Ethical Hacking", icon: <span>🛡️</span>, level: 50 },
+    { name: "Networking Basics", icon: <span>🌐</span>, level: 35 },
+    { name: "Security Fundamentals", icon: <span>🔒</span>, level: 25 },
+    { name: "Web Security", icon: <span>🕸️</span>, level: 20 },
+    { name: "Linux Basics", icon: <span>🐧</span>, level: 40 },
+    { name: "Cloud Security", icon: <span>☁️</span>, level: 5 },
+    { name: "Penetration Testing", icon: <span>🕵️‍♂️</span>, level: 10 },
+    { name: "Network Forensics", icon: <span>🔍</span>, level: 15 },
+    { name: "Social Engineering", icon: <span>🗣️</span>, level: 60 },
+  
+  
+
   ],
+  fun: [
+  { name: "Unlimited Vibe Coding", icon: <span>🎵💻</span>, level: 100 },
+  { name: "ChatGPT", icon: <span>🤖</span>, level: 100 },
+],
 };
 
 // 🟠 Skill Section Component
@@ -89,7 +113,6 @@ const About = () => {
   return (
     <div id="about" className="bg-[#ffffff] min-h-screen flex items-center">
       <div className="max-w-[90%] md:max-w-[75%] mx-auto font-inter space-y-10 py-10">
-        
         {/* Header */}
         <h1 className="text-4xl md:text-5xl font-bold text-center text-[#fe5617]">
           About Me
@@ -114,6 +137,7 @@ const About = () => {
         {/* Skills */}
         <div className="space-y-12">
           <h2 className="text-2xl font-bold text-center text-[#fe5617]">My Skills</h2>
+          
           <SkillSection title="Frontend" skillList={skills.frontend} />
           <SkillSection title="Backend" skillList={skills.backend} />
           <SkillSection title="CMS & Platforms" skillList={skills.cms} />
@@ -121,6 +145,7 @@ const About = () => {
           <SkillSection title="Deployment" skillList={skills.deployment} />
           <SkillSection title="Design" skillList={skills.design} />
           <SkillSection title="Cybersecurity" skillList={skills.cybersecurity} />
+          <SkillSection title="Fun Skills" skillList={skills.fun} />
         </div>
       </div>
     </div>

@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Education from "./components/Education";
 import Projects from "./components/Projects";
+import Services from "./components/Services";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Header />
       <Home />
       <About />
+      <Services />
       <Education />
       <Projects />
       <Contact />

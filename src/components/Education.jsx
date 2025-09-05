@@ -16,7 +16,7 @@ const Education = () => {
         </div>
 
         {/* Education List */}
-        <div className="flex flex-col gap-10">
+        <div className="grid md:grid-cols-3 gap-8">
           {/* Example 1 - In Progress */}
           <div className="w-full bg-[#F2EFE5] dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
             <h2 className="text-center text-[#fe5617] font-extrabold text-[28px] mb-2">
@@ -107,9 +107,12 @@ const Education = () => {
               </button>
             </div>
           </div>
+       
+
 
           {/* Example 4 - A/L Completed */}
-          <div className="w-full bg-[#F2EFE5] dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+          
+          <div className="w-full bg-[#F2EFE5] dark:bg-gray-800 p-6 rounded-2xl shadow-lg ">
             <h2 className="text-center text-[#fe5617] font-extrabold text-[28px] mb-2">
               G.C.E. Advanced Level
             </h2>
@@ -185,7 +188,7 @@ const Education = () => {
               </a>
               
             </div>
-          </div>
+          </div><div/>
         </div>
       </div>
     </div>

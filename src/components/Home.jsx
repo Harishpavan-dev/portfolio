@@ -2,11 +2,14 @@ import Typewriter from "typewriter-effect";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-scroll";
-
 const Home = () => {
   return (
-    <div id="home" className="bg-[#FFFFFF]">
-      <div className="max-w-[85%] mx-auto font-inter grid grid-cols-1 md:grid-cols-2 gap-8 items-center  min-h-screen">
+    <div id="home" className="bg-[#FFFFFF]"
+    
+    >
+      <div className="max-w-[85%] mx-auto font-inter grid grid-cols-1 md:grid-cols-2 gap-8 items-center  min-h-screen"
+       
+      >
         {/* Left Section */}
         <div className="order-2 lg:order-1 flex flex-col items-center md:items-start justify-start space-y-5 text-center md:text-left">
           <h1 className="text-3xl md:text-5xl font-bold">

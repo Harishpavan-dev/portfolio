@@ -3,6 +3,9 @@ const Projects = () => {
       <div
         id="projects"
         className="bg-[#ffffff] min-h-screen flex items-center dark:bg-gray-900"
+          style={{
+    backgroundImage: "url('/public/Project.png')",
+  }}
       >
         <div className="max-w-[90%] md:max-w-[75%] mx-auto font-inter space-y-10 py-10">
           {/* Header */}
@@ -16,7 +19,7 @@ const Projects = () => {
           </div>
   
           {/* Project Cards */}
-          <div className="flex flex-col gap-10">
+          <div className="grid md:grid-cols-3 gap-8">
             {/* Project 1 */}
             <div className="w-full bg-[#F2EFE5] dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
               <h2 className="text-center text-[#fe5617] font-extrabold text-[28px] mb-2">
