@@ -5,7 +5,6 @@ import {
   FaReact,
   FaPhp,
   FaGithub,
-  FaGitAlt,
   FaFigma,
   FaWordpress,
   FaJava,
@@ -13,7 +12,6 @@ import {
 } from "react-icons/fa";
 import {
   SiTailwindcss,
-  SiNextdotjs,
   SiNetlify,
   SiMongodb,
   SiPostman,
@@ -84,7 +82,7 @@ const skills = {
 const SkillSection = ({ title, skillList }) => (
   <div className="space-y-6">
     <h3 className="text-xl font-bold text-[#fe5617]">{title}</h3>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {skillList.map((skill, index) => (
         <div key={index} className="flex items-center space-x-4">
           {/* Icon */}
@@ -120,23 +118,22 @@ const About = () => {
 
         {/* About Me Text */}
         <p className="text-lg md:text-xl text-gray-700 text-center leading-relaxed">
-          I'm <span className="font-bold text-[#fe5617]">Bavananthan Harishpavan</span>, an
-          enthusiastic student passionate about technology and cybersecurity. I'm
-          continuously learning and improving my skills in{" "}
-          <span className="font-bold text-[#fe5617]">
-            web development, IT, and cybersecurity
-          </span>
-          . While I don't have professional experience yet, I'm eager to work on creative
-          projects, grow as a{" "}
-          <span className="font-bold text-[#fe5617]">
-            developer and cybersecurity professional
-          </span>
-          , and share knowledge with others.
-        </p>
+  I'm <strong className="text-[#fe5617]">Bavananthan Harishpavan</strong>, an enthusiastic student, aspiring 
+  <strong> web developer</strong>, and <strong>cybersecurity professional</strong> passionate about 
+  <strong> technology, IT solutions, and digital security</strong>. I continuously enhance my skills in 
+  <strong className="text-[#fe5617]"> web development, cybersecurity, ethical hacking, IT administration, and software design</strong>. 
+  Although I am still building professional experience, I am eager to contribute to innovative technology projects, 
+  solve complex problems, and grow as a <strong className="text-[#fe5617]">developer and cybersecurity expert</strong>. 
+  I also aim to share knowledge with others through my <strong>portfolio, online tutorials, and collaborative projects</strong>, 
+  showcasing my skills in <strong>programming, IT management, and cybersecurity solutions</strong>. 
+  My ultimate goal is to become a recognized <strong className="text-[#fe5617]">full-stack developer and cybersecurity specialist</strong>, 
+  delivering secure, modern, and scalable digital solutions.
+</p>
+
 
         {/* Skills */}
         <div className="space-y-12">
-          <h2 className="text-2xl font-bold text-center text-[#fe5617]">My Skills</h2>
+          <h2 className="text-3xl font-bold text-center text-[#fe5617]">My Skills</h2>
           
           <SkillSection title="Frontend" skillList={skills.frontend} />
           <SkillSection title="Backend" skillList={skills.backend} />
