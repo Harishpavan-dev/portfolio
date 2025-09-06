@@ -6,11 +6,22 @@ import { Link } from "react-scroll";
 const Home = () => {
   return (
     <header id="home" className="bg-[#FFFFFF]">
-      <div className="max-w-[92%] mx-auto font-inter grid grid-cols-1 md:grid-cols-2 gap-8 items-center ">
+      <div className="max-w-[92%] mx-auto font-inter grid grid-cols-1 md:grid-cols-2 gap-8 items-center md:grid-cols-[2fr_2fr]">
         
+        <section
+          className="order-1 lg:order-1 flex justify-end lg:items-center"
+          aria-label="Profile Picture"
+        >
+          <img
+            className="w-[80%] rounded-[50px]"
+            src="BavananthanHarishpavanProfile2.jpg"
+            alt="Bavananthan Harishpavan - Developer & Cybersecurity Enthusiast"
+            loading="lazy"
+          />
+        </section>
         {/* Left Section */}
         <section
-          className="order-2 lg:order-1 flex flex-col items-center md:items-start justify-start space-y-5 text-center md:text-left"
+          className="order-2 lg:order-2 flex flex-col items-center md:items-start justify-start space-y-5 text-center md:text-left"
           aria-label="Introduction"
         >
           {/* Main Heading */}
@@ -92,17 +103,7 @@ const Home = () => {
         </section>
 
         {/* Right Section */}
-        <section
-          className="order-1 lg:order-2 flex justify-end lg:items-center"
-          aria-label="Profile Picture"
-        >
-          <img
-            className="w-[80%] rounded-[50px]"
-            src="Harishpavan-profile.jpg"
-            alt="Bavananthan Harishpavan - Developer & Cybersecurity Enthusiast"
-            loading="lazy"
-          />
-        </section>
+        
       </div>
     </header>
   );

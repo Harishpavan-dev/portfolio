@@ -25,13 +25,18 @@ const Header = () => {
       <div className="max-w-[90%] mx-auto py-3 flex items-center justify-between font-inter text-[#000] dark:text-white">
         
         {/* Logo with keywords */}
-        <div>
-  <h1 className="text-[2.5rem] font-bold hover:text-[#fe5617]">
-  Harish <span className="text-xl md:text-2xl font-normal lowercase">vibe coder</span>
-</h1>
-
-  
+       <div>
+  <h1 className="flex items-center gap-3 text-[2.5rem] font-bold hover:text-[#fe5617]">
+    <img
+      className="w-[45px] h-[50px] rounded-full"
+      src="Harishpavan-profile.jpg"
+      alt="Bavananthan Harishpavan - Developer & Cybersecurity Enthusiast"
+      loading="lazy"
+    />
+    Harish
+  </h1>
 </div>
+
 
         {/* Theme toggle & Hamburger Menu for Mobile */}
         <div className="lg:hidden flex items-center gap-3">
@@ -68,7 +73,7 @@ const Header = () => {
               { to: "projects", label: "Projects" },
               { to: "contact", label: "Contact" },
             ].map((item) => (
-              <Link key={item.to} to={item.to} smooth={true} duration={500}>
+              <Link key={item.to} to={item.to} smooth={true} duration={1000}>
                 <li className="hover:text-[#fe5617] cursor-pointer transition-transform duration-300 ease-in transform hover:translate-y-[-7px]">
                   {item.label}
                 </li>
@@ -159,13 +164,7 @@ const Header = () => {
           >
             <FaWhatsapp size={29} />
           </a>
-          <button
-            onClick={toggleTheme}
-            aria-label="Toggle dark/light theme"
-            className="text-[#fe5617]"
-          >
-            {theme === "light" ? <BsMoon size={22} /> : <BsSun size={22} />}
-          </button>
+          
         </div>
       </div>
     </header>
