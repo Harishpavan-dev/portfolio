@@ -27,14 +27,9 @@ const Header = () => {
         {/* Logo with keywords */}
        <div>
   <h1 className="flex items-center gap-3 text-[2.5rem] font-bold hover:text-[#fe5617]">
-    <img
-      className="w-[45px] h-[50px] rounded-full"
-      src="Harishpavan-profile.jpg"
-      alt="Bavananthan Harishpavan - Developer & Cybersecurity Enthusiast"
-      loading="lazy"
-    />
-    Harish
-  </h1>
+    
+    Vibe Coder...  
+  </h1> 
 </div>
 
 
