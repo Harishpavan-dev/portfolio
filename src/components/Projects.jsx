@@ -19,6 +19,62 @@ const Projects = () => {
 
         {/* Project Cards */}
         <div className="grid md:grid-cols-3 gap-8">
+          {/* Project 2 - Student Attendance System */}
+<article className="w-full bg-[#F2EFE5] dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-3 transition-all duration-300" aria-label="Student Attendance System Project">
+  <h2 className="text-center text-[#fe5617] font-extrabold text-[28px] mb-2">
+    Student Attendance System
+  </h2>
+  <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
+    A web-based student attendance system for managing and tracking daily attendance. Built with PHP, MySQL, and JavaScript, featuring login system, attendance marking, and analytics dashboard.
+  </p>
+  <div className="flex justify-center gap-4 mt-4">
+    <a
+      href="https://atijaffna-harish.free.nf/login.php" // Replace with live demo link if hosted
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-[#fe5617] text-white px-5 py-2 rounded-xl font-semibold shadow-md hover:bg-[#e14c12] transition"
+    >
+      View Live
+    </a>
+    <a
+      href="https://github.com/Harishpavan-dev/Student-Attendance-System.git" // Replace with GitHub repo link
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-5 py-2 rounded-xl font-semibold shadow-md hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+    >
+      View Code
+    </a>
+  </div>
+</article>
+{/* Project 3 - Student Management System */}
+<article className="w-full bg-[#F2EFE5] dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-3 transition-all duration-300" aria-label="Student Management System Project">
+  <h2 className="text-center text-[#fe5617] font-extrabold text-[28px] mb-2">
+    Student Management System
+  </h2>
+  <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
+    A comprehensive web-based system for managing student records, including registration,. Built with PHP, MySQL, and JavaScript, featuring search, update, and reporting functionalities.
+  </p>
+  <div className="flex justify-center gap-4 mt-4">
+    <a
+      href="https://atijaffna-sms-harish.free.nf/" // Replace with live demo link if available
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-[#fe5617] text-white px-5 py-2 rounded-xl font-semibold shadow-md hover:bg-[#e14c12] transition"
+    >
+      View Live
+    </a>
+    <a
+      href="https://atijaffna-sms-harish.free.nf/" // Replace with GitHub repo link
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-5 py-2 rounded-xl font-semibold shadow-md hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+    >
+      View Code
+    </a>
+  </div>
+</article>
+
+
 
           {/* Project 1 - Portfolio Website */}
           <article className="w-full bg-[#F2EFE5] dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-3 transition-all duration-300" aria-label="Portfolio Website Project">

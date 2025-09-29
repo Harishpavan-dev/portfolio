@@ -20,28 +20,33 @@ const Education = () => {
         <div className="grid md:grid-cols-3 gap-8">
 
           {/* In Progress Courses */}
-          <article className="w-full bg-[#F2EFE5] dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-3 transition-all duration-300" aria-label="Ongoing Courses">
-            <h2 className="text-center text-[#fe5617] font-extrabold text-[28px] mb-2">
-              Ongoing Courses
-            </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
-              I am continuously improving my skills and learning advanced technology and cybersecurity concepts. I focus on practical experience and real-world projects to enhance my knowledge and expertise.
-            </p>
-            <div className="flex justify-center gap-4 mt-4">
-              <button
-                onClick={() => alert("Course not started.")}
-                className="bg-[#fe5617] text-white px-5 py-2 rounded-xl font-semibold shadow-md hover:bg-[#e14c12] transition"
-              >
-                Course Details
-              </button>
-              <button
-                onClick={() => alert("Course ongoing. Certificate not available yet.")}
-                className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-5 py-2 rounded-xl font-semibold shadow-md hover:bg-gray-300 dark:hover:bg-gray-600 transition"
-              >
-                View Certificate
-              </button>
-            </div>
-          </article>
+         {/* HNDIT Software Development */}
+<article className="w-full bg-[#F2EFE5] dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-3 transition-all duration-300" aria-label="HNDIT Software Development Course">
+  <h2 className="text-center text-[#fe5617] font-extrabold text-[28px] mb-2">
+    HNDIT
+  </h2>
+  <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
+    Currently studying HNDIT at Advanced Technological Institute, Jaffna.<br />
+    Focus on software development, practical IT projects, and advanced coding skills. Expected completion in 2028.
+  </p>
+  <div className="flex justify-center gap-4 mt-4">
+    <a
+      href="http://www.sliate.ac.lk/course/hndit#subjects-and-credits" // Replace with actual course link if available
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-[#fe5617] text-white px-5 py-2 rounded-xl font-semibold shadow-md hover:bg-[#e14c12] transition"
+    >
+      Course Details
+    </a>
+    <button
+      onClick={() => alert("Course ongoing, certificate not available yet.")}
+      className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-5 py-2 rounded-xl font-semibold shadow-md hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+    >
+      View Certificate
+    </button>
+  </div>
+</article>
+
 
           {/* Software Development NVQ-04 */}
           <article className="w-full bg-[#F2EFE5] dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-3 transition-all duration-300" aria-label="Software Development NVQ-04 Course">
