@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Services from "./components/Services";
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <Projects />
       <Contact />
       <Footer />
+      <Analytics />
     </div>
   );
 };
