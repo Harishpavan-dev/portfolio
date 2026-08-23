@@ -6,6 +6,7 @@ import Dashboard from './Dashboard';
 import ProjectsManager from './ProjectsManager';
 import ServicesManager from './ServicesManager';
 import EducationManager from './EducationManager';
+import CertificationsManager from './CertificationsManager';
 import BlogEditor from './BlogEditor';
 import TestimonialsManager from './TestimonialsManager';
 import SkillsManager from './SkillsManager';
@@ -15,6 +16,7 @@ const navItems = [
   { id: 'projects', label: 'Projects', icon: '📁' },
   { id: 'services', label: 'Services', icon: '🛠️' },
   { id: 'education', label: 'Education', icon: '🎓' },
+  { id: 'certifications', label: 'Certifications', icon: '🏆' },
   { id: 'skills', label: 'Skills', icon: '🛠️' },
   { id: 'blog', label: 'Blog', icon: '📝' },
   { id: 'testimonials', label: 'Testimonials', icon: '⭐' },
@@ -50,6 +52,7 @@ const AdminLayout = () => {
       case 'projects': return <ProjectsManager />;
       case 'services': return <ServicesManager />;
       case 'education': return <EducationManager />;
+      case 'certifications': return <CertificationsManager />;
       case 'skills': return <SkillsManager />;
       case 'blog': return <BlogEditor />;
       case 'testimonials': return <TestimonialsManager />;

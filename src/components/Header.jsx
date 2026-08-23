@@ -35,9 +35,9 @@ const Header = () => {
     { to: "about", label: "About" },
     { to: "services", label: "Services" },
     { to: "education", label: "Education" },
+    { to: "certifications", label: "Certifications" },
     { to: "projects", label: "Projects" },
     { to: "contact", label: "Contact" },
-    { to: "blog", label: "Blog" },
   ];
 
   const socialLinks = [

@@ -178,6 +178,12 @@ export const getEducation = async () => {
   return all.filter(e => e.isVisible !== false);
 };
 
+// --- Certifications ---
+export const getCertifications = async () => {
+  const all = await getCollection('certifications', [], { field: 'order', direction: 'asc' });
+  return all.filter(c => c.isVisible !== false);
+};
+
 // --- Blog Posts ---
 export const getBlogPosts = async () => {
   const all = await getCollection('blog_posts');
@@ -209,5 +215,6 @@ export const getAllProjects = () => getCollection('projects', [], { field: 'orde
 export const getAllSkills = () => getCollection('skills', [], { field: 'order', direction: 'asc' });
 export const getAllServices = () => getCollection('services', [], { field: 'order', direction: 'asc' });
 export const getAllEducation = () => getCollection('education', [], { field: 'order', direction: 'asc' });
+export const getAllCertifications = () => getCollection('certifications', [], { field: 'order', direction: 'asc' });
 export const getAllBlogPosts = () => getCollection('blog_posts');
 export const getAllTestimonials = () => getCollection('testimonials', [], { field: 'order', direction: 'asc' });

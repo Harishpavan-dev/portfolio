@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Education from "./components/Education";
+import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
 import Services from "./components/Services";
 import AnimatedBackground from "./components/ui/AnimatedBackground";
@@ -34,6 +35,7 @@ const PortfolioHome = () => {
         <About />
         <Services />
         <Education />
+        <Certifications />
         <Projects />
         <Testimonials />
         <BlogList isHomePage={true} />
