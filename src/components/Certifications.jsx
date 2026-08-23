@@ -7,6 +7,14 @@ import { useCertifications } from "../hooks/useCertifications";
 const Certifications = () => {
   const { certifications, loading } = useCertifications();
   const [selectedCert, setSelectedCert] = useState(null);
+  const [copiedId, setCopiedId] = useState(null);
+
+  const handleCopyId = (e, idKey, code) => {
+    e.stopPropagation();
+    navigator.clipboard.writeText(code);
+    setCopiedId(idKey);
+    setTimeout(() => setCopiedId(null), 2000);
+  };
 
   return (
     <section
@@ -42,6 +50,35 @@ const Certifications = () => {
           </div>
         )}
 
+        {/* Dynamic JSON-LD Structured Data for Google Certifications indexing */}
+        {!loading && certifications.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(
+                certifications.map((cert) => ({
+                  "@context": "https://schema.org",
+                  "@type": "EducationalOccupationalCredential",
+                  "name": cert.title,
+                  "credentialCategory": "Professional Certification",
+                  "recognizedBy": {
+                    "@type": "EducationalOrganization",
+                    "name": cert.issuer,
+                  },
+                  ...(cert.credentialId && { "identifier": cert.credentialId }),
+                  ...(cert.verificationLink && { "url": cert.verificationLink }),
+                  ...(cert.imageUrl && { "image": cert.imageUrl }),
+                  "author": {
+                    "@type": "Person",
+                    "name": "Bavananthan Harishpavan",
+                    "url": "https://harishpavan-dev.vercel.app/"
+                  }
+                }))
+              ),
+            }}
+          />
+        )}
+
         {/* Certifications Grid */}
         {!loading && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -52,6 +89,8 @@ const Certifications = () => {
                 delay={index * 0.1}
               >
                 <motion.article
+                  itemScope
+                  itemType="https://schema.org/EducationalOccupationalCredential"
                   className="glass-card p-5 sm:p-6 rounded-2xl group border border-transparent hover:border-primary/20 transition-all duration-500 h-full flex flex-col cursor-pointer"
                   whileHover={{ y: -6, boxShadow: '0 20px 60px rgba(108, 99, 255, 0.12)' }}
                   onClick={() => cert.imageUrl && setSelectedCert(cert)}
@@ -62,14 +101,15 @@ const Certifications = () => {
                     <div className="relative w-full h-40 mb-4 rounded-xl overflow-hidden bg-gray-100 dark:bg-white/5">
                       <img
                         src={cert.imageUrl}
-                        alt={cert.title}
+                        alt={`${cert.title} Certificate by ${cert.issuer} - Bavananthan Harishpavan`}
+                        itemProp="image"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />
                       {/* Hover overlay */}
                       <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-300 flex items-center justify-center">
                         <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-semibold bg-black/40 px-3 py-1.5 rounded-lg backdrop-blur-sm">
-                          🔍 View
+                          🔍 View Certificate
                         </span>
                       </div>
                     </div>
@@ -83,24 +123,47 @@ const Certifications = () => {
                   )}
 
                   {/* Title */}
-                  <h3 className="text-base font-bold mb-1.5 text-gray-900 dark:text-white group-hover:text-primary transition-colors line-clamp-2">
+                  <h3 itemProp="name" className="text-base font-bold mb-1.5 text-gray-900 dark:text-white group-hover:text-primary transition-colors line-clamp-2">
                     {cert.title}
                   </h3>
 
                   {/* Issuer */}
-                  <p className="text-xs font-medium text-primary/80 mb-3 flex items-center gap-1.5">
-                    <span className="text-xs">🏛️</span> {cert.issuer}
+                  <p itemProp="recognizedBy" itemScope itemType="https://schema.org/EducationalOrganization" className="text-xs font-medium text-primary/80 mb-3 flex items-center gap-1.5">
+                    <span className="text-xs">🏛️</span> <span itemProp="name">{cert.issuer}</span>
                   </p>
 
                   {/* Credential ID */}
                   {cert.credentialId && (
-                    <div className="glass-card p-2.5 rounded-lg mb-4 border border-primary/10 mt-auto">
-                      <p className="text-[10px] font-semibold text-gray-500 dark:text-gray-500 mb-1 uppercase tracking-wider">
-                        Credential ID
-                      </p>
-                      <code className="text-xs font-mono font-bold text-primary bg-primary/5 px-2 py-0.5 rounded">
-                        {cert.credentialId}
-                      </code>
+                    <div className="glass-card p-2.5 rounded-lg mb-4 border border-primary/10 mt-auto flex items-center justify-between gap-2">
+                      <div>
+                        <p className="text-[10px] font-semibold text-gray-500 dark:text-gray-500 mb-0.5 uppercase tracking-wider">
+                          Credential ID
+                        </p>
+                        <code itemProp="identifier" className="text-xs font-mono font-bold text-primary bg-primary/5 px-2 py-0.5 rounded">
+                          {cert.credentialId}
+                        </code>
+                      </div>
+                      <button
+                        onClick={(e) => handleCopyId(e, cert.id || index, cert.credentialId)}
+                        className="p-1.5 rounded-lg hover:bg-primary/10 text-gray-500 hover:text-primary transition-all flex items-center gap-1 text-xs shrink-0"
+                        title="Copy Credential ID"
+                        aria-label="Copy Credential ID"
+                      >
+                        {copiedId === (cert.id || index) ? (
+                          <span className="text-emerald-500 font-semibold flex items-center gap-1 text-[11px]">
+                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                            Copied!
+                          </span>
+                        ) : (
+                          <span className="flex items-center gap-1 text-gray-400 hover:text-primary">
+                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                          </span>
+                        )}
+                      </button>
                     </div>
                   )}
 
@@ -110,6 +173,7 @@ const Certifications = () => {
                       href={cert.verificationLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      itemProp="url"
                       className="btn-neon text-xs py-2.5 mt-auto text-center"
                       onClick={(e) => e.stopPropagation()}
                     >

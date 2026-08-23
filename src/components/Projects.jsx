@@ -55,12 +55,41 @@ const Projects = () => {
           </div>
         )}
 
+        {/* Dynamic JSON-LD Structured Data for Projects SEO */}
+        {!loading && projects.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(
+                projects.map((proj) => ({
+                  "@context": "https://schema.org",
+                  "@type": "SoftwareApplication",
+                  "name": proj.title,
+                  "description": proj.description,
+                  "applicationCategory": "DeveloperApplication",
+                  "operatingSystem": "Web",
+                  "author": {
+                    "@type": "Person",
+                    "name": "Bavananthan Harishpavan",
+                    "url": "https://harishpavan-dev.vercel.app/"
+                  },
+                  ...(proj.liveLink && { "url": proj.liveLink }),
+                  ...(proj.thumbnailUrl && { "image": proj.thumbnailUrl }),
+                  ...(proj.tags && { "keywords": proj.tags.join(", ") })
+                }))
+              ),
+            }}
+          />
+        )}
+
         {!loading && (
           <>
             {/* Featured Project */}
             {featured && (
               <ScrollReveal>
                 <motion.article
+                  itemScope
+                  itemType="https://schema.org/SoftwareApplication"
                   className="glass-card p-8 md:p-10 rounded-2xl border border-primary/20 relative overflow-hidden group"
                   whileHover={{ y: -4 }}
                   aria-label={featured.title}
@@ -78,10 +107,10 @@ const Projects = () => {
                       <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center text-white text-2xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                         🚀
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                      <h3 itemProp="name" className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
                         {featured.title}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                      <p itemProp="description" className="text-gray-600 dark:text-gray-400 leading-relaxed">
                         {featured.description}
                       </p>
                       <div className="flex flex-wrap gap-2">
@@ -95,7 +124,7 @@ const Projects = () => {
                         ))}
                       </div>
                       <div className="flex gap-3 pt-2">
-                        <a href={featured.liveLink} target="_blank" rel="noopener noreferrer" className="btn-neon text-sm">
+                        <a href={featured.liveLink} target="_blank" rel="noopener noreferrer" itemProp="url" className="btn-neon text-sm">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                           </svg>
@@ -115,7 +144,8 @@ const Projects = () => {
                       {featured.thumbnailUrl ? (
                         <img
                           src={featured.thumbnailUrl}
-                          alt={featured.title}
+                          alt={`${featured.title} Project by Bavananthan Harishpavan`}
+                          itemProp="image"
                           className="w-full h-64 rounded-2xl object-cover border border-primary/10"
                         />
                       ) : (
@@ -134,6 +164,8 @@ const Projects = () => {
               {others.map((project, index) => (
                 <ScrollReveal key={project.id || index} delay={index * 0.08}>
                   <motion.article
+                    itemScope
+                    itemType="https://schema.org/SoftwareApplication"
                     className="glass-card p-7 rounded-2xl group h-full flex flex-col border border-transparent hover:border-primary/15 transition-all duration-500"
                     whileHover={{ y: -6, boxShadow: '0 20px 60px rgba(108, 99, 255, 0.1)' }}
                     aria-label={project.title}
@@ -142,7 +174,8 @@ const Projects = () => {
                     {project.thumbnailUrl ? (
                       <img
                         src={project.thumbnailUrl}
-                        alt={project.title}
+                        alt={`${project.title} Project by Harishpavan - ${project.tags?.join(", ") || "Web App"}`}
+                        itemProp="image"
                         className="w-full h-40 rounded-xl object-cover mb-5"
                       />
                     ) : (
@@ -152,12 +185,12 @@ const Projects = () => {
                     )}
 
                     {/* Title */}
-                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                    <h3 itemProp="name" className="text-lg font-bold mb-3 text-gray-900 dark:text-white group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-5 leading-relaxed flex-1">
+                    <p itemProp="description" className="text-sm text-gray-600 dark:text-gray-400 mb-5 leading-relaxed flex-1">
                       {project.description}
                     </p>
 

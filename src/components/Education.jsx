@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import SectionHeader from "./ui/SectionHeader";
 import ScrollReveal from "./ui/ScrollReveal";
@@ -26,6 +27,14 @@ const statusConfig = {
 
 const Education = () => {
   const { education: educationData, loading } = useEducation();
+  const [copiedCode, setCopiedCode] = useState(null);
+
+  const handleCopyCode = (e, idKey, code) => {
+    e.stopPropagation();
+    navigator.clipboard.writeText(code);
+    setCopiedCode(idKey);
+    setTimeout(() => setCopiedCode(null), 2000);
+  };
 
   return (
     <section
@@ -117,13 +126,36 @@ const Education = () => {
 
                         {/* Verification Code */}
                         {edu.verificationCode && (
-                          <div className="glass-card p-3.5 rounded-xl mb-5 border border-primary/10">
-                            <p className="text-[11px] font-semibold text-gray-500 dark:text-gray-500 mb-1.5">
-                              Verification Code
-                            </p>
-                            <code className="text-sm font-mono font-bold text-primary bg-primary/5 px-3 py-1 rounded-lg">
-                              {edu.verificationCode}
-                            </code>
+                          <div className="glass-card p-3 rounded-xl mb-5 border border-primary/10 flex items-center justify-between gap-2">
+                            <div>
+                              <p className="text-[11px] font-semibold text-gray-500 dark:text-gray-500 mb-1">
+                                Verification Code
+                              </p>
+                              <code className="text-sm font-mono font-bold text-primary bg-primary/5 px-2.5 py-1 rounded-lg">
+                                {edu.verificationCode}
+                              </code>
+                            </div>
+                            <button
+                              onClick={(e) => handleCopyCode(e, edu.id || index, edu.verificationCode)}
+                              className="p-1.5 rounded-lg hover:bg-primary/10 text-gray-500 hover:text-primary transition-all flex items-center gap-1 text-xs shrink-0"
+                              title="Copy Verification Code"
+                              aria-label="Copy Verification Code"
+                            >
+                              {copiedCode === (edu.id || index) ? (
+                                <span className="text-emerald-500 font-semibold flex items-center gap-1 text-xs">
+                                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                  </svg>
+                                  Copied!
+                                </span>
+                              ) : (
+                                <span className="flex items-center gap-1 text-gray-400 hover:text-primary">
+                                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                  </svg>
+                                </span>
+                              )}
+                            </button>
                           </div>
                         )}
 
